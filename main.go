@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/bosn/BoGoService/controllers"
+)
 
 func main() {
-	fmt.Println("Hello Bosn")
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
